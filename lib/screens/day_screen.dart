@@ -27,7 +27,6 @@ class _DayScreenState extends State<DayScreen> {
 
   Future<void> insertDefaultValue(MealDao md) async {
     List<Meal> dailyConfig = await md.getDailyMeals(date: DateTime.now());
-    print(dailyConfig.length);
     if (dailyConfig.length == 0)
       await md.insertDailyMeals(date: DateTime.now());
   }
